@@ -5,9 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://use.typekit.net/awf5bws.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Foldit&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,24 +27,17 @@
      
     }
 
-   
-
-    .firstPage{
-      background-image: url(bgm.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-      width: 100%;
-
-    }
-
     nav{
+      background-color: #31353f;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-top: 20px;
+      padding-top: 10px;
       padding-left: 5%;
       padding-right: 5%;
+      padding-bottom: 10px;
+      position: sticky;
+      top: 0;
 
     }
 
@@ -85,57 +80,203 @@
       cursor: pointer;
     }
 
-   
-   
+    main{
 
- div> #hero{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      background-image: url(bgm.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .ph{
+
+      font-family: "hind", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      font-size: 20px;
+      color: #fff;
+      margin: 10px;
+      margin-right: 50px;
+      
+
+    }
+
+    .name{
+      font-family: 'Righteous', cursive;
+      font-weight: 300;
+      font-size: 100px;
+      color: #fff;
+      text-transform: uppercase;
+      margin-left: 100px;
+
+    }
+
+
+    #about{
+      background-color: #31353f;
+      height: 100vh;
+      width: 100%;
+      color: #fff;
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    h3{
+      font-family: 'Righteous', cursive;
+      font-weight: 300;
+      font-size: 50px;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+
+   .details{
+      font-family: "hind", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      margin: 10px 0;
+      line-height: 1.5;
+      
     
-  }
+   }
 
- 
+   
+   .service {
+  background-color: #fff;
+  width: 100%;
+  padding: 100px 0px;
+}
 
- 
-
+.title h3{
+  color: #31353f;
+  font-size: 50px;
+  width: 1130px;
+  margin: 30px auto;
+  text-align: center;
+  font-family: 'Righteous', cursive;
   
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+
+}
+
+.card {
+  height: 365px;
+  width: 335px;
+  padding: 20px 35px;
+  background-color: #31353f;
+  border-radius: 20px;
+  margin: 15px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card i {
+  font-size: 50px;
+  display: block;
+  text-align: center;
+  margin: 25px 0px;
+  color: #ffa83f;
+}
+
+h5 {
+  color: #fff;
+  font-size: 23px;
+  margin-bottom: 15px;
+  font-family: "hind", sans-serif;
+}
+
+.pra p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 27px;
+  margin-bottom: 25px;
+  font-family: "hind", sans-serif;
+}
+
+.card .button{
+  background-color: #ffa83f;
+  color: white;
+  text-decoration: none;
+  border: 2px solid transparent;
+  font-weight: bold;
+  padding: 9px 22px;
+  border-radius: 30px;
+  transition: .4s;
+  font-family: "hind", sans-serif;
+
+}
+
+.card .button:hover{
+  background-color: transparent;
+  border: 2px solid ;
+  cursor: pointer;
+
+}
+
+
+
+#contact{
+  background-color: #31353f;
+
+}
+.lp{
+  
+}
+
+   
+  
+
+   
 
   
   </style>
 </head>
 <body>
-  <section>
-  
-  
-    <div class="firstPage">
+   
     <nav class="nav-bar">
       <img src="W T Hub-1.png" alt="logo" class="logo" width="50px" height="50px">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#service">Services</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button type="button">Sign Up</button>
       
     </nav>
 
-    
-
-      
+      <main class="first">
     <div id="hero">
-      <h3 class="b1">Transform Your Life </h3>
-      <h1>Winners Tech Hub </h1>
-      <h3>Transform the World</h3>
-    </div>
+      <p class="ph">Transform Your Life, Transform the World.</p>
+      <h1 class="name">WTech Hub </h1>
       
-  </div>
-
+    </div>
+  </main>
+      
 
     <div id="about">
-      <h3>ABOUT</h3>
-      <p>Welcome to Winners Tech Hub (WTH), your ultimate destination for student services and support. We understand the unique challenges and aspirations of students, and we are here to empower you on your academic journey.
+
+      <h3>ABOUT Us</h3>
+      <p class="details">Welcome to Winners Tech Hub (WTH), your ultimate destination for student services and support. We understand the unique challenges and aspirations of students, and we are here to empower you on your academic journey.
 
         At WTH, we offer a comprehensive range of services tailored specifically to meet the needs of students. Whether you're seeking academic assistance, career guidance, or personal development resources, we have you covered. Our dedicated team of experts is committed to providing you with the tools, knowledge, and support necessary to thrive in your educational pursuits.
         
@@ -143,7 +284,7 @@
         
         Career Development: We understand the importance of preparing for life beyond the classroom. Our career development services provide guidance in exploring career paths, creating impressive resumes, honing interview skills, and connecting you with internships and job opportunities.
         
-        Personal Growth: Your well-being is our priority. Our platform offers resources and guidance to help you navigate the challenges of student life, manage stress, improve time management, and develop essential life skills. We believe that a healthy work-life balance is key to your overall success and happiness.
+        Personal Growth: Your well-being is our priority. <br> <br> Our platform offers resources and guidance to help you navigate the challenges of student life, manage stress, improve time management, and develop essential life skills. We believe that a healthy work-life balance is key to your overall success and happiness.
         
         Community and Networking: Connect with a vibrant community of fellow students who share similar goals and aspirations. Our platform provides opportunities to network, collaborate, and engage in meaningful discussions. Together, we can foster a supportive environment that promotes growth and inspires success.
         
@@ -155,32 +296,67 @@
     </div>
 
 
-    <div  id="services">
-      <h3>Services</h3>
-      <ul>
-        <li> <a href="">Sign Up</a></li>
-        <li><a href="">View Students</a></li>
-        <li><a href="">Update Profile</a></li>
-        <li><a href="">Delete Profile</a></li>
-      </ul>
+
+    <div class="service" id="service">
+      <div class="title">
+        <h3>OUR SERVICES ARE</h3>
+      </div>
+  
+        <div class="box">
+          <div class="card">
+            <i class="fa-solid fa-user-plus" ></i>
+            <h5>Sign Up</h5>
+            <div class="pra">
+              <p>Join our tech hub today and get access to exclusive resources,
+                 events and opportunities. 
+                </p>
+                <p style="text-align: center;">
+                  <a class="button" href="#">Sign Up</a>
+                </p>         
+            </div>
+          </div>
+  
+          <div class="card">
+            <i class="fa-regular fa-eye"></i>
+            <h5>View Students</h5>
+            <div class="pra">
+              <p>See people who are using our platform already </p> 
+              <p style="text-align: center;">
+                <a class="button" href="#">View</a>
+              </p>   
+            </div>
+          </div>
+  
+          <div class="card">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <h5>Update Profile</h5>
+            <div class="pra">
+              <p> update and make your profile more fun here </p>
+                 <p style="text-align: center;">
+                  <a class="button" href="#">Update</a>
+                </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <i class="fa-regular fa-trash-can"></i>
+            <h5>Delete Account</h5>
+            <div class="pra">
+              <p>See people who are using our platform already </p> 
+              <p style="text-align: center;">
+                <a class="button" href="#">Delete</a>
+              </p>   
+            </div>
+          </div>
+  
+        </div>
     </div>
+  
 
 
-     <div class="sendmsg">
-      <form id="form">
-        <h2 class="msg">Message Us</h2>
-       <p> <input type="text" id="name" name="name" placeholder="Name" required></p>
-       <p><input type="email" name="email" id="email" placeholder="Email" required></p>
-       <p> <input type="text" name="subject" id="subjet" placeholder="Subject" required></p>
-       <p><input type="text" name="message" id="message" placeholder="Message" required></p>
-       <button class="send-msg"><i class="fa-regular fa-paper-plane"></i> SEND MESSAGE</button>
-      </form>
-     </div>
-
-
-    <div  id="contact">
-       <h3>Contact Us</h3> 
-      <p>follow us @  
+    <div id="contact">
+        
+      <p class="lp">follow us @  
       <a href="https://web.facebook.com/mimieamichy.733" target="_blank"> <i class="fa-brands fa-facebook"></i></a>  
       <a href="https://twitter.com/js_mimie" target="_blank"><i class="fa-brands fa-twitter"></i></a>  
       <a href="https://www.linkedin.com/in/miracle-amarachy-ezeh-078516278/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>  
@@ -189,6 +365,6 @@
    
 
 
-  </section>
+  
 </body>
 </html>
