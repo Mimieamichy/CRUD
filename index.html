@@ -23,35 +23,38 @@
      
     }
 
-    nav{
+    li{
+      list-style: none;
+    }
+
+    a{
+      color: #fff;
+      text-decoration: none;
+      font-family: "hind", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .navbar{
+      min-height: 70px;
       background-color: #31353f;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-top: 10px;
-      padding-left: 5%;
-      padding-right: 5%;
-      padding-bottom: 10px;
+      padding: 0 24px;
       position: sticky;
       top: 0;
 
     }
 
-    nav ul li{
-      list-style-type: none;
-      display: inline-block ;
-      padding: 10px 20px;
+    .nav-menu{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 60px;
       
-    }
-
-    nav ul li a{
-      color: #fff;
-      transition: .3s;
-      text-decoration: none;
-      font-family: "hind", sans-serif;
-      font-style: normal;
-      font-weight: bold;
-
+      
     }
 
     nav ul li a:hover{
@@ -59,24 +62,6 @@
       transition: .3s;
     }
 
-    .checkButton{
-      font-size: 30px;
-      color: #fff;
-      float: right;
-      line-height: 80px;
-      margin-right: 40px;
-      cursor: pointer;
-      display: none;
-    }
-
-    .MyCheckBox{
-      display: none;
-    }
-
-
-
-
-    
     button{
       border: none;
       background: #ffa83f;
@@ -92,6 +77,21 @@
     button:hover{
       transform: scale(1.3);
       cursor: pointer;
+    }
+
+    .hamburger{
+      display: none;
+      cursor: pointer;
+    }
+
+    .bar{
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      background-color: white;
     }
 
     main{
@@ -132,7 +132,7 @@
 
     #about{
       background-color: #31353f;
-      height: 100vh;
+      height: fit-content;
       width: 100%;
       color: #fff;
       display: inline-block;
@@ -283,18 +283,54 @@ h5 {
 
 
 
- @media screen and (max-width: 600px) {
+ @media (max-width: 600px) {
 
   .logo{
       width: 50px;
       height: 50px;
     }
+    
+    .hamburger{
+      display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu{
+      position: fixed;
+      left: -100%;
+      top: 70px;
+      flex-direction: column;
+      background-color: #31353f;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .nav-item{
+      margin: 16px 0;
+    }
+    .nav-menu.active{
+      left: 0;
+    }
+    .signup{
+      display: none;
+    }
+    
 
   .lp{
   font-family: "hind", sans-serif;
   font-weight: 100;
   font-style: normal;
-  font-size: 20px;
+  font-size: 10px;
   color: #fff;
   margin: 5px;
   margin-right: 50px;
@@ -304,7 +340,7 @@ h5 {
 
  #contact{
   background-color: #31353f;
-  height: 50px;
+  height: 100px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -313,7 +349,7 @@ h5 {
 
   .card{
 
-    height: 200px;
+  height: 250px;
   width: 250px;
   padding: 10px 10px;
   background-color: #31353f;
@@ -345,9 +381,10 @@ h5 {
   color: white;
   text-decoration: none;
   border: 2px solid transparent;
+  font-size: 10px;
   font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 30px;
+  padding: 5px 3px;
+  border-radius: 20px;
   transition: .4s;
   font-family: "hind", sans-serif;
 
@@ -413,7 +450,7 @@ h5 {
       font-family: "hind", sans-serif;
       font-weight: 50;
       font-style: normal;
-      font-size: 15px;
+      font-size: 10px;
       color: #fff;
       margin: 5px;
       margin-right: 30px;
@@ -422,84 +459,58 @@ h5 {
     .name{
       font-family: 'Righteous', cursive;
       font-weight: 300;
-      font-size: 50px;
+      font-size: 30px;
       color: #fff;
       text-transform: uppercase;
       margin-left: 100px;
     }
 
-    .checkButton{
-      display: block;
-    }
-
-    ul{
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      background-color: #31353f;
-      top: 80px;
-      left: -100%;
-      text-align: center;
-      transition: all .5s;
-
-    }
-    .signup{
-      display: none;
-    }
-
-    nav ul li {
-      display: block;
-      margin: 50px 0;
-      line-height: 30px;
-
-    }
-
-    nav ul li a{
-      font-size: 20px;
+    div a{
+      text-align: right;
+      margin: 5px;
+      text-decoration: none;
       color: #fff;
-    }
-    .MyCheckBox:checked ~ ul{
-      left: 0;
-      
-
+      font-size: 10px;
     }
 
+    main{
+      height: 50vh;
+    }
 
-   
+    #about{
+      background-color: #31353f;
+      height: fit-content;
+      width: 100%;
+      color: #fff;
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
 
+    }
 
-
-
-
-
-
- }
- 
-  
-
-   
+    
+    }
 
   
   </style>
 </head>
-<body>
+<body> 
    
-    <nav class="nav-bar">
+    <nav class="navbar">
       <img src="W T Hub-2.png" alt="logo" class="logo" width="100px" height="60px">
-      <input type="checkbox" class="MyCheckBox" id="myCheck">
-      <label for="myCheck" class="checkButton">
-        <i class="fa fa-bars"></i>
-      </label>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#service">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#service" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <button type="button" class="signup">Sign Up</button>
-      
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
     </nav>
-
       <main class="first">
     <div id="hero">
       <p class="ph">Transform Your Life, Transform the World.</p>
@@ -520,15 +531,7 @@ h5 {
         
         Career Development: We understand the importance of preparing for life beyond the classroom. Our career development services provide guidance in exploring career paths, creating impressive resumes, honing interview skills, and connecting you with internships and job opportunities.
         
-        Personal Growth: Your well-being is our priority. <br> <br> Our platform offers resources and guidance to help you navigate the challenges of student life, manage stress, improve time management, and develop essential life skills. We believe that a healthy work-life balance is key to your overall success and happiness.
-        
-        Community and Networking: Connect with a vibrant community of fellow students who share similar goals and aspirations. Our platform provides opportunities to network, collaborate, and engage in meaningful discussions. Together, we can foster a supportive environment that promotes growth and inspires success.
-        
-        We are dedicated to delivering high-quality services that cater to your individual needs. Our user-friendly interface ensures a seamless experience, allowing you to easily access the resources and support you require.
-        
-        Join us at MTH and unlock your full potential. Let us be your partner in success as you embark on this transformative journey of education and personal growth. Together, we will empower you to thrive academically, professionally, and personally.
-        
-        Start exploring our services today and embark on a path to excellence with WTH.</p>
+        Personal Growth: Your well-being is our priority. </p>
     </div>
 
 
@@ -543,8 +546,7 @@ h5 {
             <i class="fa-solid fa-user-plus" ></i>
             <h5>Sign Up</h5>
             <div class="pra">
-              <p>Join our tech hub today and get access to exclusive resources,
-                 events and opportunities. 
+              <p>Join our tech hub today and get access to exclusive events and opportunities. 
                 </p>
                 <p style="text-align: center;">
                   <a class="button" href="#">Sign Up</a>
@@ -600,6 +602,25 @@ h5 {
       <a href="https://www.pinterest.com/amichy07/" target="_blank"><i class="fa-brands fa-pinterest fa-2x"></i></a>
       
     </div>
+
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      })
+
+      document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      }))
+
+
+
+    </script>
    
 
 
