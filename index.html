@@ -60,22 +60,14 @@
       transition: .3s;
     }
 
-    button{
-      border: none;
-      background: #ffa83f;
-      padding: 12px 20px;
-      border-radius: 30px;
-      color: #fff;
-      font-family: "hind", sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 15px;
-      transition: .4s;
-    }
-    button:hover{
-      transform: scale(1.3);
-      cursor: pointer;
-    }
+   #btn-popUp{
+    border-radius: 20px;
+    background-color: #ffa83f;
+    padding: 10px;
+   }
+   #btn-popUp:hover{
+    background-color: #31353f;
+   }
 
     .hamburger{
       display: none;
@@ -90,7 +82,8 @@
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
       background-color: white;
-    }
+    }   
+
 
     main{
 
@@ -124,10 +117,8 @@
       color: #fff;
       text-transform: uppercase;
       margin-left: 100px;
-
     }
-
-
+    
     #about{
       background-color: #31353f;
       height: fit-content;
@@ -198,7 +189,7 @@
   background-color: #31353f;
   border-radius: 20px;
   margin: 15px;
-  position: relative;
+ 
   overflow: hidden;
   text-align: center;
 }
@@ -311,17 +302,25 @@ h5 {
       width: 100%;
       text-align: center;
       transition: 0.3s;
+      gap: 10px;
+      
     }
-
+    #btn-popUp{
+    border-radius: 10px;
+    background-color: #ffa83f;
+    padding: 7px;
+    font-size: 15px;
+   }
+   
     .nav-item{
-      margin: 16px 0;
+      margin-bottom: 16px;
+      
+
     }
     .nav-menu.active{
       left: 0;
     }
-    .signup{
-      display: none;
-    }
+    
     
     
 
@@ -346,7 +345,7 @@ h5 {
   align-items: center;
 }
 
-  .card{
+ .card{
 
   height: 250px;
   width: 250px;
@@ -354,8 +353,7 @@ h5 {
   background-color: #31353f;
   border-radius: 20px;
   margin: 5px;
-  position: relative;
-  
+  overflow: hidden;
   text-align: center;
 
   }
@@ -502,8 +500,8 @@ h5 {
         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
         <li class="nav-item"><a href="#service" class="nav-link">Services</a></li>
         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="login.html" class="nav-link" id="btn-popUp">Login</a></li>
       </ul>
-      <a href="form.html" target="_blank"><button type="button" class="signup">Sign Up</button></a>
     <div class="hamburger">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -511,16 +509,13 @@ h5 {
     </div>
     </nav>
       <main class="first">
-    <div id="hero">
+        <div id="hero">
       <p class="ph">Transform Your Life, Transform the World.</p>
       <h1 class="name">WTech Hub </h1>
-      
     </div>
   </main>
-      
 
     <div id="about">
-
       <h3>ABOUT Us</h3>
       <p class="details">Welcome to Winners Tech Hub (WTH), your ultimate destination for student services and support. We understand the unique challenges and aspirations of students, and we are here to empower you on your academic journey.
 
@@ -548,7 +543,7 @@ h5 {
               <p>Join our tech hub today and get access to exclusive events and opportunities. 
                 </p>
                 <p style="text-align: center;">
-                  <a class="button" href="form.html" target="_blank">Sign Up</a>
+                  <a class="button" href="form.html" target="_parent">Sign Up</a>
                 </p>         
             </div>
           </div>
@@ -565,12 +560,12 @@ h5 {
           </div>
   
           <div class="card">
-            <i class="fa-solid fa-pen-to-square"></i>
-            <h5>Update Profile</h5>
+            <i class="fa-solid fa-user-large"></i>
+            <h5>Login</h5>
             <div class="pra">
-              <p> update and make your profile more fun here </p>
+              <p> Login to your personal ccount here to have fun </p>
                  <p style="text-align: center;">
-                  <a class="button" href="#">Update</a>
+                  <a class="button" href="login.html" target="_parent">Login</a>
                 </p>
             </div>
           </div>
@@ -617,8 +612,9 @@ h5 {
         navMenu.classList.remove("active");
       }))
 
+     
 
-
+     
     </script>
    
 
