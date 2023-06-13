@@ -170,12 +170,12 @@
 </head>
 <body>
   <div class="container">
-    <form action="table.html">
+    <form onsubmit="saveFormData(event)">
       <h2>Registration</h2>
       <div class="content">
         <div class="input-box">
           <label for="name">Full Name</label>
-          <input type="text" name="name" id="name" placeholder="Enter full name" required>
+          <input type="text" name="name" id="name" placeholder="Enter full name" autofocus required>
         </div>
         <div class="input-box">
           <label for="user-name">Username</label>
@@ -228,6 +228,32 @@
               password2.type = "password";
             }
           }
+
+
+
+          function saveFormData(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  
+  var formData = {
+    name: name,
+    email: email
+  };
+  
+  // Retrieve the existing table data from localStorage or initialize it
+  var tableData = JSON.parse(localStorage.getItem("tableData")) || [];
+  
+  // Add the new form data to the table data
+  tableData.push(formData);
+  
+  // Store the updated table data in localStorage
+  localStorage.setItem("tableData", JSON.stringify(tableData));
+  
+  // Redirect to the second HTML file
+  window.location.href = "table.html";
+}
 
           
 
