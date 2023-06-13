@@ -170,7 +170,7 @@
 </head>
 <body>
   <div class="container">
-    <form action="" method="post">
+    <form action="table.html">
       <h2>Registration</h2>
       <div class="content">
         <div class="input-box">
@@ -210,7 +210,7 @@
         <p>By clicking Sign Up, you agree to our <a href="#">Terms,</a> <a href="#">Privacy Policy</a> and <a href="#">Cookies Policy.</a> You my recieve SMS notifications from us and can opt out at any time.</p>
       </div>
       <div class="button-container">
-       <a href="table.html" target="_self"> <button type="submit">Sign up</button></a>
+        <button type="submit">Sign up</button>
       </div>
     </form>
   </div>
@@ -229,17 +229,7 @@
             }
           }
 
-          if (document.getElementById('password1').value === document.getElementById('password2').value) {
-             "Passwords match"
-          } else {
-            "Passwords do not match"
-          }
           
-          if (password1.length < 6) {
-            alert("Password must be at least 6 characters");
-          } else if (!password1.match(/[A-Z]/)) {
-            alert("Password must contain at least one uppercase letter");
-          }
 
    
   
