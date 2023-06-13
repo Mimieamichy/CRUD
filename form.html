@@ -85,9 +85,9 @@
       width: fit-content;
       height: fit-content;
       cursor: pointer;
-      
+
     }
-    
+
     .gender-category label{
       padding: 0 20px 0 5px;
       font-size: 14px;
@@ -161,11 +161,11 @@
       }
       .content::-webkit-scrollbar{
         width: 0;
-        
+
       }
-      
+
     }
-     
+
   </style>
 </head>
 <body>
@@ -188,7 +188,7 @@
         <div class="input-box">
           <label for="email">Email</label>
           <input type="email" name="email" id="email" placeholder="Enter your valid email address" required>
-        </div>       
+        </div>
         <div class="input-box">
           <label for="password1">Password (min of 6 letters)</label>
           <input type="password" name="password1" id="password1"  placeholder="Enter new password" minlength="6"  required>
@@ -216,7 +216,7 @@
   </div>
 
   <script>
-    
+
     function togglePasswords() {
             var password1 = document.getElementById("password1");
             var password2 = document.getElementById("password2");
@@ -229,14 +229,20 @@
             }
           }
 
-          
+    // function that takes a string and returns true if password is valid
+    function isPasswordValid(string){
 
-   
-  
+    }
+
+    module.exports = {isPasswordValid}
+
+
+
+
   </script>
 
 
 
-  
+
 </body>
 </html>
