@@ -39,6 +39,9 @@
         color: #ffa83f;
         font-size: 30px;
       }
+      a {
+        text-decoration: none;
+      }
       button {
         outline: none;
         border: none;
@@ -92,7 +95,6 @@
         word-break: break-all;
         text-align: center;
         color: #31353f;
-        text-transform: capitalize;
       }
       tr:hover td {
         color: #ffa83f;
@@ -120,7 +122,7 @@
   <body>
     <div class="table">
       <div class="table_header">
-        <h2>WT Hub</h2>
+        <a href="index.html"><h2>WT Hub</h2></a>
         <div>
           <input type="search" id="searchQuery" placeholder="Enter Name" />
           <button type="button" class="add_new" onclick="searchTable()">
