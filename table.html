@@ -122,8 +122,10 @@
       <div class="table_header">
         <h2>WT Hub</h2>
         <div>
-          <input type="search" placeholder="Enter Name" />
-          <button type="button" class="add_new">Search</button>
+          <input type="search" id="searchQuery" placeholder="Enter Name" />
+          <button type="button" class="add_new" onclick="searchTable()">
+            Search
+          </button>
         </div>
       </div>
       <div class="table_section">
@@ -194,6 +196,29 @@
         localStorage.setItem("tableData", JSON.stringify(tableData));
 
         populateTable();
+      }
+      function searchTable() {
+        var query = document.getElementById("searchQuery").value.toLowerCase();
+
+        var table = document.getElementById("myTable");
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 0; i < rows.length; i++) {
+          var row = rows[i];
+          var cells = row.getElementsByTagName("td");
+          var found = false;
+
+          for (var j = 0; j < cells.length; j++) {
+            var cell = cells[j];
+            var text = cell.innerText || cell.textContent;
+            if (text.toLowerCase().indexOf(query) > -1) {
+              found = true;
+              break;
+            }
+          }
+
+          row.style.display = found ? "" : "none";
+        }
       }
     </script>
   </body>
