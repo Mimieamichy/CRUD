@@ -1,602 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://use.typekit.net/awf5bws.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="W T Hub-2.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>CRUD</title>
-  <style>
-    *{
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-      
-     
-    }
-
-    li{
-      list-style: none;
-    }
-
-    a{
-      color: #fff;
-      text-decoration: none;
-      font-family: "hind", sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      transition: .3s;
-    }
-
-    .navbar{
-      min-height: 70px;
-      background-color: #31353f;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 24px;
-      position: sticky;
-      top: 0;
-
-    }
-
-    .nav-menu{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 60px;
-      
-      
-    }
-
-    nav ul li a:hover{
-      color: #ffa83f;
-      transition: .3s;
-    }
-
-   #btn-popUp{
-    border-radius: 20px;
-    background-color: #ffa83f;
-    padding: 10px;
-   }
-   #btn-popUp:hover{
-    background-color: #31353f;
-   }
-
-    .hamburger{
-      display: none;
-      cursor: pointer;
-    }
-
-    .bar{
-      display: block;
-      width: 25px;
-      height: 3px;
-      margin: 5px auto;
-      -webkit-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
-      background-color: white;
-    }   
-
-
-    main{
-
-      background-image: url(bgm.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-    }
-    .ph{
-
-      font-family: "hind", sans-serif;
-      font-weight: 100;
-      font-style: normal;
-      font-size: 20px;
-      color: #fff;
-      margin: 10px;
-      margin-right: 50px;
-      
-
-    }
-
-    .name{
-      font-family: 'Righteous', cursive;
-      font-weight: 300;
-      font-size: 100px;
-      color: #fff;
-      text-transform: uppercase;
-      margin-left: 100px;
-    }
-    
-    #about{
-      background-color: #31353f;
-      height: fit-content;
-      width: 100%;
-      color: #fff;
-      display: inline-block;
-      justify-content: center;
-      align-items: center;
-
-    }
-
-    h3{
-      font-family: 'Righteous', cursive;
-      font-weight: 300;
-      font-size: 50px;
-      color: #fff;
-      text-transform: uppercase;
-      text-align: center;
-      margin-top: 30px;
-      margin-bottom: 20px;
-    }
-
-
-   .details{
-      font-family: "hind", sans-serif;
-      font-weight: 100;
-      font-style: normal;
-      font-size: 20px;
-      color: #fff;
-      text-align: center;
-      margin: 10px 0;
-      line-height: 1.5;
-      
-    
-   }
-
-   
-   .service {
-   background-color: #fff;
-   width: 100%;
-   padding: 100px 0px;
-
-  }
-
-.title h3{
-  color: #31353f;
-  font-size: 50px;
-  font-weight: 300;
-  width: 1130px;
-  margin: 30px auto;
-  text-align: center;
-  font-family: 'Righteous', cursive;
-  
-}
-
-.box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 400px;
-
-}
-
-.card {
-  height: 365px;
-  width: 335px;
-  padding: 20px 35px;
-  background-color: #31353f;
-  border-radius: 20px;
-  margin: 15px;
- 
-  overflow: hidden;
-  text-align: center;
-}
-
-.card i {
-  font-size: 50px;
-  display: block;
-  text-align: center;
-  margin: 25px 0px;
-  color: #ffa83f;
-}
-
-h5 {
-  color: #fff;
-  font-size: 23px;
-  margin-bottom: 15px;
-  font-family: "hind", sans-serif;
-}
-
-.pra p {
-  color: #fff;
-  font-size: 16px;
-  line-height: 27px;
-  margin-bottom: 25px;
-  font-family: "hind", sans-serif;
-}
-
-.card .button{
-  background-color: #ffa83f;
-  color: white;
-  text-decoration: none;
-  border: 2px solid transparent;
-  font-weight: bold;
-  padding: 9px 22px;
-  border-radius: 30px;
-  transition: .4s;
-  font-family: "hind", sans-serif;
-
-}
-
-.card .button:hover{
-  background-color: transparent;
-  border: 2px solid ;
-  cursor: pointer;
-
-}
-
-
-
-#contact{
-  background-color: #31353f;
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
- .lp{
-  font-family: "hind", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-  font-size: 30px;
-  color: #fff;
-  margin: 10px;
-  margin-right: 50px;
-  text-align: left;
-      
-
- }
- div a{
-  text-align: right;
-  margin: 10px;
-  text-decoration: none;
-  color: #fff;
- }
-
- div a:hover{
-  color: #ffa83f;
- }
-
-
-
- @media (max-width: 600px) {
-
-  .logo{
-      width: 50px;
-      height: 50px;
-    }
-    
-    .hamburger{
-      display: block;
-    }
-
-    .hamburger.active .bar:nth-child(2){
-      opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1){
-      transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3){
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .nav-menu{
-      position: fixed;
-      left: -100%;
-      top: 70px;
-      flex-direction: column;
-      background-color: #31353f;
-      width: 100%;
-      text-align: center;
-      transition: 0.3s;
-      gap: 10px;
-      
-    }
-    #btn-popUp{
-    border-radius: 10px;
-    background-color: #ffa83f;
-    padding: 7px;
-    font-size: 15px;
-   }
-   
-    .nav-item{
-      margin-bottom: 16px;
-      
-
-    }
-    .nav-menu.active{
-      left: 0;
-    }
-    
-    
-    
-
-  .lp{
-  font-family: "hind", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-  font-size: 10px;
-  color: #fff;
-  margin: 5px;
-  margin-right: 50px;
-  text-align: left;
-      
- }
-
- #contact{
-  background-color: #31353f;
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
- .card{
-
-  height: 250px;
-  width: 250px;
-  padding: 10px 10px;
-  background-color: #31353f;
-  border-radius: 20px;
-  margin: 5px;
-  overflow: hidden;
-  text-align: center;
-
-  }
-
-  .card i {
-  font-size: 20px;
-  display: block;
-  text-align: center;
-  margin: 10px 0px;
-  color: #ffa83f;
-}
-
-h5 {
-  color: #fff;
-  font-size: 15px;
-  margin-bottom: 5px;
-  font-family: "hind", sans-serif;
-}
-
-.card .button{
-  background-color: #ffa83f;
-  color: white;
-  text-decoration: none;
-  border: 2px solid transparent;
-  font-size: 10px;
-  font-weight: bold;
-  padding: 5px 3px;
-  border-radius: 20px;
-  transition: .4s;
-  font-family: "hind", sans-serif;
-
-}
-
-.pra p {
-  color: #fff;
-  font-size: 10px;
-  line-height: 18px;
-  margin-bottom: 15px;
-  font-family: "hind", sans-serif;
-}
-
-.title h3{
-  color: #31353f;
-  font-size: 30px;
-  font-weight: 50;
-  width: 100%;
-  margin: 15px auto;
-  text-align: center;
-  font-family: 'Righteous', cursive;
-  
-}
-.service{
-  
-   padding: 10px 10px;
-
-}
-.box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 200px;
-
-}
-
-.details{
-      font-family: "hind", sans-serif;
-      font-weight: 50;
-      font-style: normal;
-      font-size: 12px;
-      color: #fff;
-      text-align: center;
-      margin: 10px 0;
-      line-height: 1.5;
-      
-    
-   }
-
-   h3{
-      font-family: 'Righteous', cursive;
-      font-weight: 200;
-      font-size: 30px;
-      color: #fff;
-      text-transform: uppercase;
-      text-align: center;
-      margin-top: 30px;
-      margin-bottom: 20px;
-    }
-
-    
-    .ph{
-      font-family: "hind", sans-serif;
-      font-weight: 50;
-      font-style: normal;
-      font-size: 10px;
-      color: #fff;
-      margin: 5px;
-      margin-right: 30px;
-    }
-
-    .name{
-      font-family: 'Righteous', cursive;
-      font-weight: 300;
-      font-size: 30px;
-      color: #fff;
-      text-transform: uppercase;
-      margin-left: 100px;
-    }
-
-    div a{
-      text-align: right;
-      margin: 5px;
-      text-decoration: none;
-      color: #fff;
-      font-size: 10px;
-    }
-
-    main{
-      height: 50vh;
-    }
-
-    #about{
-      background-color: #31353f;
-      height: fit-content;
-      width: 100%;
-      color: #fff;
-      display: inline-block;
-      justify-content: center;
-      align-items: center;
-
-    }
-
-    
-    }
-
-  
-  </style>
-</head>
-<body> 
-   
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/awf5bws.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="W T Hub-2.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>CRUD</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-family: "hind", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .navbar {
+        min-height: 70px;
+        background-color: #31353f;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        position: sticky;
+        top: 0;
+      }
+
+      .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+      }
+
+      nav ul li a:hover {
+        color: #ffa83f;
+        transition: 0.3s;
+      }
+
+      #btn-popUp {
+        border-radius: 20px;
+        background-color: #ffa83f;
+        padding: 10px;
+      }
+      #btn-popUp:hover {
+        background-color: #31353f;
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: white;
+      }
+
+      main {
+        background-image: url(bgm.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .ph {
+        font-family: "hind", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        font-size: 20px;
+        color: #fff;
+        margin: 10px;
+        margin-right: 50px;
+      }
+
+      .name {
+        font-family: "Righteous", cursive;
+        font-weight: 300;
+        font-size: 100px;
+        color: #fff;
+        text-transform: uppercase;
+        margin-left: 100px;
+      }
+
+      #about {
+        background-color: #31353f;
+        height: fit-content;
+        width: 100%;
+        color: #fff;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h3 {
+        font-family: "Righteous", cursive;
+        font-weight: 300;
+        font-size: 50px;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+
+      .details {
+        font-family: "hind", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        margin: 10px 0;
+        line-height: 1.5;
+      }
+
+      .service {
+        background-color: #fff;
+        width: 100%;
+        padding: 100px 0px;
+      }
+
+      .title h3 {
+        color: #31353f;
+        font-size: 50px;
+        font-weight: 300;
+        width: 1130px;
+        margin: 30px auto;
+        text-align: center;
+        font-family: "Righteous", cursive;
+      }
+
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 400px;
+      }
+
+      .card {
+        height: 365px;
+        width: 335px;
+        padding: 20px 35px;
+        background-color: #31353f;
+        border-radius: 20px;
+        margin: 15px;
+
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .card i {
+        font-size: 50px;
+        display: block;
+        text-align: center;
+        margin: 25px 0px;
+        color: #ffa83f;
+      }
+
+      h5 {
+        color: #fff;
+        font-size: 23px;
+        margin-bottom: 15px;
+        font-family: "hind", sans-serif;
+      }
+
+      .pra p {
+        color: #fff;
+        font-size: 16px;
+        line-height: 27px;
+        margin-bottom: 25px;
+        font-family: "hind", sans-serif;
+      }
+
+      .card .button {
+        background-color: #ffa83f;
+        color: white;
+        margin: 20px;
+        text-decoration: none;
+        border: 2px solid transparent;
+        font-weight: bold;
+        padding: 9px 22px;
+        border-radius: 30px;
+        transition: 0.4s;
+        font-family: "hind", sans-serif;
+        bottom: 0;
+      }
+
+      .card .button:hover {
+        background-color: transparent;
+        border: 2px solid;
+        cursor: pointer;
+      }
+
+      #contact {
+        background-color: #31353f;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .lp {
+        font-family: "hind", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        font-size: 30px;
+        color: #fff;
+        margin: 10px;
+        margin-right: 50px;
+        text-align: left;
+      }
+      div a {
+        text-align: right;
+        margin: 10px;
+        text-decoration: none;
+        color: #fff;
+      }
+
+      div a:hover {
+        color: #ffa83f;
+      }
+
+      @media (max-width: 600px) {
+        .logo {
+          width: 50px;
+          height: 50px;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 70px;
+          flex-direction: column;
+          background-color: #31353f;
+          width: 100%;
+          text-align: center;
+          transition: 0.3s;
+          gap: 10px;
+        }
+        #btn-popUp {
+          border-radius: 10px;
+          background-color: #ffa83f;
+          padding: 7px;
+          font-size: 15px;
+        }
+
+        .nav-item {
+          margin-bottom: 16px;
+        }
+        .nav-menu.active {
+          left: 0;
+        }
+
+        .lp {
+          font-family: "hind", sans-serif;
+          font-weight: 100;
+          font-style: normal;
+          font-size: 10px;
+          color: #fff;
+          margin: 5px;
+          margin-right: 50px;
+          text-align: left;
+        }
+
+        #contact {
+          background-color: #31353f;
+          height: 100px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .card {
+          height: 250px;
+          width: 250px;
+          padding: 10px 10px;
+          background-color: #31353f;
+          border-radius: 20px;
+          margin: 5px;
+          overflow: hidden;
+          text-align: center;
+        }
+
+        .card i {
+          font-size: 20px;
+          display: block;
+          text-align: center;
+          margin: 10px 0px;
+          color: #ffa83f;
+        }
+
+        h5 {
+          color: #fff;
+          font-size: 15px;
+          margin-bottom: 5px;
+          font-family: "hind", sans-serif;
+        }
+
+        .card .button {
+          background-color: #ffa83f;
+          color: white;
+          text-decoration: none;
+          border: 2px solid transparent;
+          font-size: 10px;
+          font-weight: bold;
+          padding: 5px 3px;
+          border-radius: 20px;
+          transition: 0.4s;
+          font-family: "hind", sans-serif;
+        }
+
+        .pra p {
+          color: #fff;
+          font-size: 10px;
+          line-height: 18px;
+          margin-bottom: 15px;
+          font-family: "hind", sans-serif;
+        }
+
+        .title h3 {
+          color: #31353f;
+          font-size: 30px;
+          font-weight: 50;
+          width: 100%;
+          margin: 15px auto;
+          text-align: center;
+          font-family: "Righteous", cursive;
+        }
+        .service {
+          padding: 10px 10px;
+        }
+        .box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 200px;
+        }
+
+        .details {
+          font-family: "hind", sans-serif;
+          font-weight: 50;
+          font-style: normal;
+          font-size: 12px;
+          color: #fff;
+          text-align: center;
+          margin: 10px 0;
+          line-height: 1.5;
+        }
+
+        h3 {
+          font-family: "Righteous", cursive;
+          font-weight: 200;
+          font-size: 30px;
+          color: #fff;
+          text-transform: uppercase;
+          text-align: center;
+          margin-top: 30px;
+          margin-bottom: 20px;
+        }
+
+        .ph {
+          font-family: "hind", sans-serif;
+          font-weight: 50;
+          font-style: normal;
+          font-size: 10px;
+          color: #fff;
+          margin: 5px;
+          margin-right: 30px;
+        }
+
+        .name {
+          font-family: "Righteous", cursive;
+          font-weight: 300;
+          font-size: 30px;
+          color: #fff;
+          text-transform: uppercase;
+          margin-left: 100px;
+        }
+
+        div a {
+          text-align: right;
+          margin: 5px;
+          text-decoration: none;
+          color: #fff;
+          font-size: 10px;
+        }
+
+        main {
+          height: 50vh;
+        }
+
+        #about {
+          background-color: #31353f;
+          height: fit-content;
+          width: 100%;
+          color: #fff;
+          display: inline-block;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <nav class="navbar">
-      <img src="W T Hub-2.png" alt="logo" class="logo" width="100px" height="60px">
+      <img
+        src="W T Hub-2.png"
+        alt="logo"
+        class="logo"
+        width="100px"
+        height="60px"
+      />
       <ul class="nav-menu">
         <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#service" class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-        <li class="nav-item"><a href="login.html" class="nav-link" id="btn-popUp">Login</a></li>
+        <li class="nav-item">
+          <a href="#service" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a href="login.html" class="nav-link" id="btn-popUp">Login</a>
+        </li>
       </ul>
-    <div class="hamburger">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </nav>
-      <main class="first">
-        <div id="hero">
-      <p class="ph">Transform Your Life, Transform the World.</p>
-      <h1 class="name">WTech Hub </h1>
-    </div>
-  </main>
+    <main class="first">
+      <div id="hero">
+        <p class="ph">Transform Your Life, Transform the World.</p>
+        <h1 class="name">WTech Hub</h1>
+      </div>
+    </main>
 
     <div id="about">
       <h3>ABOUT Us</h3>
-      <p class="details">Welcome to Winners Tech Hub (WTH), your ultimate destination for student services and support. We understand the unique challenges and aspirations of students, and we are here to empower you on your academic journey.
-
-        At WTH, we offer a comprehensive range of services tailored specifically to meet the needs of students. Whether you're seeking academic assistance, career guidance, or personal development resources, we have you covered. Our dedicated team of experts is committed to providing you with the tools, knowledge, and support necessary to thrive in your educational pursuits.
-        
-        Academic Support: We offer a wide array of academic services designed to enhance your learning experience. From tutoring and study guides to essay editing and exam preparation, we are here to help you excel in your coursework and achieve your academic goals.
-        
-        Career Development: We understand the importance of preparing for life beyond the classroom. Our career development services provide guidance in exploring career paths, creating impressive resumes, honing interview skills, and connecting you with internships and job opportunities.
-        
-        Personal Growth: Your well-being is our priority. </p>
+      <p class="details">
+        Welcome to Winners Tech Hub (WTH), your ultimate destination for student
+        services and support. We understand the unique challenges and
+        aspirations of students, and we are here to empower you on your academic
+        journey. At WTH, we offer a comprehensive range of services tailored
+        specifically to meet the needs of students. Whether you're seeking
+        academic assistance, career guidance, or personal development resources,
+        we have you covered. Our dedicated team of experts is committed to
+        providing you with the tools, knowledge, and support necessary to thrive
+        in your educational pursuits. Academic Support: We offer a wide array of
+        academic services designed to enhance your learning experience. From
+        tutoring and study guides to essay editing and exam preparation, we are
+        here to help you excel in your coursework and achieve your academic
+        goals. Career Development: We understand the importance of preparing for
+        life beyond the classroom. Our career development services provide
+        guidance in exploring career paths, creating impressive resumes, honing
+        interview skills, and connecting you with internships and job
+        opportunities. Personal Growth: Your well-being is our priority.
+      </p>
     </div>
-
-
 
     <div class="service" id="service">
       <div class="title">
         <h3>OUR SERVICES ARE</h3>
       </div>
-  
-        <div class="box">
-          <div class="card">
-            <i class="fa-solid fa-user-plus" ></i>
-            <h5>Sign Up</h5>
-            <div class="pra">
-              <p>Join our tech hub today and get access to exclusive events and opportunities. 
-                </p>
-                <p style="text-align: center;">
-                  <a class="button" href="form.html" target="_parent">Sign Up</a>
-                </p>         
-            </div>
-          </div>
-  
-          <div class="card">
-            <i class="fa-regular fa-eye"></i>
-            <h5>View Students</h5>
-            <div class="pra">
-              <p>See people who are using our platform already </p> 
-              <p style="text-align: center;">
-                <a class="button" href="table.html">View</a>
-              </p>   
-            </div>
-          </div>
-  
-          <div class="card">
-            <i class="fa-solid fa-user-large"></i>
-            <h5>Login</h5>
-            <div class="pra">
-              <p> Login to your personal ccount here to have fun </p>
-                 <p style="text-align: center;">
-                  <a class="button" href="login.html" target="_parent">Login</a>
-                </p>
-            </div>
-          </div>
 
-          <div class="card">
-            <i class="fa-regular fa-trash-can"></i>
-            <h5>Delete Account</h5>
-            <div class="pra">
-              <p>See people who are using our platform already </p> 
-              <p style="text-align: center;">
-                <a class="button" href="table.html">Delete</a>
-              </p>   
-            </div>
+      <div class="box">
+        <div class="card">
+          <i class="fa-solid fa-user-plus"></i>
+          <h5>Sign Up</h5>
+          <div class="pra">
+            <p>
+              Join our tech hub today and get access to exclusive events and
+              opportunities.
+            </p>
+            <p style="text-align: center">
+              <a class="button" href="form.html" target="_parent">Sign Up</a>
+            </p>
           </div>
-  
         </div>
-    </div>
-  
 
+        <div class="card">
+          <i class="fa-regular fa-eye"></i>
+          <h5>View Students</h5>
+          <div class="pra">
+            <p>See people who are using our platform already</p>
+            <p style="text-align: center">
+              <a class="button" href="table.html">View</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <i class="fa-solid fa-user-large"></i>
+          <h5>Login</h5>
+          <div class="pra">
+            <p>Login to your personal ccount here to have fun</p>
+            <p style="text-align: center">
+              <a class="button" href="login.html" target="_parent">Login</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <i class="fa-regular fa-trash-can"></i>
+          <h5>Delete Account</h5>
+          <div class="pra">
+            <p>See people who are using our platform already</p>
+            <p style="text-align: center">
+              <a class="button" href="table.html">Delete</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div id="contact">
-        
-     
-      <p class="lp"><i class="fa-regular fa-copyright"></i> Winner's Tech Hub 2023</p>
-      <a href="https://web.facebook.com/mimieamichy.733" target="_blank"> <i class="fa-brands fa-facebook fa-2x"></i></a>  
-      <a href="https://twitter.com/js_mimie" target="_blank"><i class="fa-brands fa-twitter fa-2x"></i></a>  
-      <a href="https://www.linkedin.com/in/miracle-amarachy-ezeh-078516278/" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>  
-      <a href="https://www.pinterest.com/amichy07/" target="_blank"><i class="fa-brands fa-pinterest fa-2x"></i></a>
-      
+      <p class="lp">
+        <i class="fa-regular fa-copyright"></i> Winner's Tech Hub 2023
+      </p>
+      <a href="https://web.facebook.com/mimieamichy.733" target="_blank">
+        <i class="fa-brands fa-facebook fa-2x"></i
+      ></a>
+      <a href="https://twitter.com/js_mimie" target="_blank"
+        ><i class="fa-brands fa-twitter fa-2x"></i
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/miracle-amarachy-ezeh-078516278/"
+        target="_blank"
+        ><i class="fa-brands fa-linkedin fa-2x"></i
+      ></a>
+      <a href="https://www.pinterest.com/amichy07/" target="_blank"
+        ><i class="fa-brands fa-pinterest fa-2x"></i
+      ></a>
     </div>
-
 
     <script>
       const hamburger = document.querySelector(".hamburger");
@@ -605,20 +591,14 @@ h5 {
       hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
-      })
+      });
 
-      document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("active");
-      }))
-
-     
-
-     
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
     </script>
-   
-
-
-  
-</body>
+  </body>
 </html>

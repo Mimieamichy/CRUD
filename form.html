@@ -1,268 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://use.typekit.net/awf5bws.css">
-  <title>FORM</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="W T Hub-2.png">
-  <style>
-    *{
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-      font-family: "hind", sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/awf5bws.css" />
+    <title>FORM</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="W T Hub-2.png" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "hind", sans-serif;
+      }
 
-    body{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-image: linear-gradient(#31353f , #61045f);
-    }
-    .container{
-      max-width: 650px;
-      padding: 28px;
-      margin: 0 28px;
-      border-radius: 10px;
-      overflow: hidden;
-      background: rgba(0, 0, 0, 0.2);
-      box-shadow: 0 15px 20px rgba(0, 0, 0, 0.6);
-    }
-    h2{
-      font-size: 26px;
-      font-weight: bold;
-      text-align: left;
-      color: #fff;
-      padding-bottom: 8px;
-      border-bottom: 1px solid silver;
-    }
-    .content{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 20px 0;
-    }
-    .input-box{
-      display: flex;
-      flex-wrap: wrap;
-      width: 50%;
-      padding-bottom: 15px;
-    }
-    .input-box:nth-child(2n){
-      justify-content: end;
-    }
-    .input-box label, .gender-title{
-      width: 95%;
-      color: #fff;
-      font-weight: bold;
-      margin: 5px 0;
-    }
-    .gender-title{
-      font-size: 16px;
-    }
-    .input-box input{
-      height: 40px;
-      width: 95%;
-      padding: 0 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      outline: none;
-    }
-    .input-box input:is(:focus, :valid){
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    }
-    .btn{
-      color: #fff;
-      background-color: #380036;
-      border: none;
-      border-radius: 15px;
-      padding: 10px;
-      margin-bottom: 10px;
-      font-size: 10px;
-      width: fit-content;
-      height: fit-content;
-      cursor: pointer;
-      
-    }
-    
-    .gender-category label{
-      padding: 0 20px 0 5px;
-      font-size: 14px;
-    }
-    .gender-category{
-      color: gainsboro;
-    }
-    .gender-category label, .gender-category input{
-      cursor: pointer;
-    }
-    .alert{
-      font-size: 14px;
-      font-style: italic;
-      color: #fff;
-      margin: 5px 0;
-      padding: 10px;
-      line-height: 1.5;
-    }
-    .alert a{
-      font-weight: bold;
-      text-decoration: none;
-      color: skyblue;
-    }
-    .alert a:hover{
-      font-weight: bold;
-      text-decoration: underline;
-      color: #380036;
-    }
-    .button-container{
-      margin: 15px 0;
-    }
-    .button-container button{
-      width: 100%;
-      margin-top: 10px;
-      padding: 10px;
-      display: block;
-      font-size: 20px;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      transition: 0.3s;
-      background-image: linear-gradient(to right, #aa076b, #61045f);
-    }
-    .button-container a{
-      text-decoration: none;
-    }
-    .button-container button:hover{
-      background-image: linear-gradient(to right,#61045f,#aa076b);
-      cursor: pointer;
-    }
-
-    @media (max-width: 600px){
-      .container{
-        min-width: 280px;
-      }
-      .content{
-        max-height: 380px;
-        overflow: auto;
-      }
-     .input-box{
-        margin-bottom: 12px;
-        width: 100%;
-      }
-      .input-box:nth-child(2n){
-        justify-content: space-between;
-      }
-      .gender-category{
+      body {
         display: flex;
-        justify-content: space-around;
-        width: 60%;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: linear-gradient(#31353f, #61045f);
       }
-      .content::-webkit-scrollbar{
-        width: 0;
-        
+      .container {
+        max-width: 650px;
+        padding: 28px;
+        margin: 0 28px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.6);
       }
-      
-    }
-     
-  </style>
-</head>
-<body>
-  <div class="container">
-    <form onsubmit="saveFormData(event)">
-      <h2>Registration</h2>
-      <div class="content">
-        <div class="input-box">
-          <label for="name">Full Name</label>
-          <input type="text" name="name" id="name" placeholder="Enter full name" autofocus required>
-        </div>
-        <div class="input-box">
-          <label for="user-name">Username</label>
-          <input type="text" name="uname" id="user-name" placeholder="Enter username" required>
-        </div>
-        <div class="input-box">
-          <label for="phoneNum">Phone Number</label>
-          <input type="tel" name="phoneNum" id="phoneNum" placeholder="Enter your Phone Number" maxlength="12" required>
-        </div>
-        <div class="input-box">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" placeholder="Enter your valid email address" required>
-        </div>       
-        <div class="input-box">
-          <label for="password1">Password (min of 6 letters)</label>
-          <input type="password" name="password1" id="password1"  placeholder="Enter new password" minlength="6"  required>
-        </div>
-        <div class="input-box">
-          <label for="password2">Confirm Password</label>
-          <input type="password" name="password2" id="password2"  placeholder="Confirm password" minlength="6"  required>
-        </div>
-          <input type="button" onclick="togglePasswords()" value="Show Password" class="btn" />
-        <span class="gender-title">Gender</span>
+      h2 {
+        font-size: 26px;
+        font-weight: bold;
+        text-align: left;
+        color: #fff;
+        padding-bottom: 8px;
+        border-bottom: 1px solid silver;
+      }
+      .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px 0;
+      }
+      .input-box {
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+        padding-bottom: 15px;
+      }
+      .input-box:nth-child(2n) {
+        justify-content: end;
+      }
+      .input-box label,
+      .gender-title {
+        width: 95%;
+        color: #fff;
+        font-weight: bold;
+        margin: 5px 0;
+      }
+      .gender-title {
+        font-size: 16px;
+      }
+      .input-box input {
+        height: 40px;
+        width: 95%;
+        padding: 0 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        outline: none;
+      }
+      .input-box input:is(:focus, :valid) {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      }
+      .btn {
+        color: #fff;
+        background-color: #380036;
+        border: none;
+        border-radius: 15px;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        width: fit-content;
+        height: fit-content;
+        cursor: pointer;
+      }
+
+      .gender-category label {
+        padding: 0 20px 0 5px;
+        font-size: 14px;
+      }
+      .gender-category {
+        color: gainsboro;
+      }
+      .gender-category label,
+      .gender-category input {
+        cursor: pointer;
+      }
+      .alert {
+        font-size: 14px;
+        font-style: italic;
+        color: #fff;
+        margin: 5px 0;
+        padding: 10px;
+        line-height: 1.5;
+      }
+      .alert a {
+        font-weight: bold;
+        text-decoration: none;
+        color: skyblue;
+      }
+      .alert a:hover {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #380036;
+      }
+      .button-container {
+        margin: 15px 0;
+      }
+      .button-container button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        display: block;
+        font-size: 20px;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        transition: 0.3s;
+        background-image: linear-gradient(to right, #aa076b, #61045f);
+      }
+      .button-container a {
+        text-decoration: none;
+      }
+      .button-container button:hover {
+        background-image: linear-gradient(to right, #61045f, #aa076b);
+        cursor: pointer;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          min-width: 280px;
+        }
+        .content {
+          max-height: 380px;
+          overflow: auto;
+        }
+        .input-box {
+          margin-bottom: 12px;
+          width: 100%;
+        }
+        .input-box:nth-child(2n) {
+          justify-content: space-between;
+        }
+        .gender-category {
+          display: flex;
+          justify-content: space-around;
+          width: 60%;
+        }
+        .content::-webkit-scrollbar {
+          width: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form onsubmit="saveFormData(event)">
+        <h2>Registration</h2>
+        <div class="content">
+          <div class="input-box">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter full name"
+              autofocus
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label for="user-name">Username</label>
+            <input
+              type="text"
+              name="uname"
+              id="user-name"
+              placeholder="Enter username"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label for="phoneNum">Phone Number</label>
+            <input
+              type="tel"
+              name="phoneNum"
+              id="phoneNum"
+              placeholder="Enter your Phone Number"
+              maxlength="12"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your valid email address"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label for="password1">Password</label>
+            <input
+              type="password"
+              name="password1"
+              id="password1"
+              placeholder="Enter new password"
+              minlength="8"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label for="password2">Confirm Password</label>
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              placeholder="Confirm password"
+              minlength="8"
+              required
+            />
+          </div>
+          <input
+            type="button"
+            onclick="togglePasswords()"
+            value="Show Password"
+            class="btn"
+          />
+
+          <span class="gender-title">Gender</span>
           <div class="gender-category">
-            <input type="radio" name="gender" id="male">
+            <input type="radio" name="gender" id="male" />
             <label for="male">Male</label>
-            <input type="radio" name="gender" id="female">
+            <input type="radio" name="gender" id="female" />
             <label for="female">Female</label>
           </div>
-      </div>
-      <div class="alert">
-        <p>By clicking Sign Up, you agree to our <a href="#">Terms,</a> <a href="#">Privacy Policy</a> and <a href="#">Cookies Policy.</a> You my recieve SMS notifications from us and can opt out at any time.</p>
-      </div>
-      <div class="button-container">
-        <button type="submit">Sign up</button>
-      </div>
-    </form>
-  </div>
+        </div>
+        <div class="alert">
+          <p>
+            By clicking Sign Up, you agree to our <a href="#">Terms,</a>
+            <a href="#">Privacy Policy</a> and
+            <a href="#">Cookies Policy.</a> You may recieve SMS notifications
+            from us and can opt out at any time.
+          </p>
+        </div>
+        <div class="button-container">
+          <button type="submit" onclick="return checkPassword()">
+            Sign up
+          </button>
+        </div>
+      </form>
+    </div>
 
-  <script>
-    
-    function togglePasswords() {
-            var password1 = document.getElementById("password1");
-            var password2 = document.getElementById("password2");
-            if (password1.type === "password") {
-              password1.type = "text";
-              password2.type = "text";
-            } else {
-              password1.type = "password";
-              password2.type = "password";
-            }
-          }
+    <script>
+      var password1 = document.getElementById("password1");
+      var password2 = document.getElementById("password2");
+      function togglePasswords() {
+        if (password1.type === "password") {
+          password1.type = "text";
+          password2.type = "text";
+        } else {
+          password1.type = "password";
+          password2.type = "password";
+        }
+      }
 
+      function checkPassword() {
+        var password1 = document.getElementById("password1").value;
+        var password2 = document.getElementById("password2").value;
 
+        if (password1 !== password2) {
+          alert("Passwords do not match.");
+          return false;
+        }
 
-          function saveFormData(event) {
-  event.preventDefault(); // Prevent form submission
-  
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  
-  var formData = {
-    name: name,
-    email: email
-  };
-  
-  // Retrieve the existing table data from localStorage or initialize it
-  var tableData = JSON.parse(localStorage.getItem("tableData")) || [];
-  
-  // Add the new form data to the table data
-  tableData.push(formData);
-  
-  // Store the updated table data in localStorage
-  localStorage.setItem("tableData", JSON.stringify(tableData));
-  
-  // Redirect to the second HTML file
-  window.location.href = "table.html";
-}
+        if (password1.length <= 8) {
+          alert("Password should be greater than 8 characters.");
+          return false;
+        }
 
-          
+        var hasAlphabet = /[a-zA-Z]/.test(password1);
+        var hasNumber = /\d/.test(password1);
 
-   
-  
-  </script>
+        if (!hasAlphabet || !hasNumber) {
+          alert("Password should contain both alphabets and numbers.");
+          return false;
+        }
 
+        return true;
+      }
+      function saveFormData(event) {
+        event.preventDefault();
 
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
 
-  
-</body>
+        var formData = {
+          name: name,
+          email: email,
+        };
+
+        var tableData = JSON.parse(localStorage.getItem("tableData")) || [];
+
+        tableData.push(formData);
+
+        localStorage.setItem("tableData", JSON.stringify(tableData));
+
+        window.location.href = "table.html";
+      }
+    </script>
+  </body>
 </html>
